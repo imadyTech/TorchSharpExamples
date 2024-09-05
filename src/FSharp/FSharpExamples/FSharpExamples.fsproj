@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <WarnOn>3390;$(WarnOn)</WarnOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="MNIST.fs" />
+    <Compile Include="AdversarialExampleGeneration.fs" />
+    <Compile Include="AlexNet.fs" />
+    <Compile Include="SequenceToSequence.fs" />
+    <Compile Include="TextClassification.fs" />
+    <Content Include="..\..\CSharp\CSharpExamples\arguments.json" Link="arguments.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TorchSharp-cpu" Version="0.102.0" />
+    <PackageReference Include="TorchVision" Version="0.102.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Utils\Examples.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="6.0.6" />
+  </ItemGroup>
+
+</Project>
